@@ -17,7 +17,7 @@ npm i -D react-storybook-addon-static-markup
 Then set the addon in your `.storybook/config.js`:
 
 ```js
-import { configure, setAddon } from '@kadira/storybook'
+import { configure, setAddon } from '@storybook/react'
 
 import staticMarkup from 'react-storybook-addon-static-markup'
 
@@ -30,7 +30,6 @@ configure(() => {
 
 ...and register it in your `.storybook/addons.js`:
 ```js
-import '@kadira/storybook/addons';
 import 'react-storybook-addon-static-markup/register';
 ```
 
@@ -39,7 +38,7 @@ import 'react-storybook-addon-static-markup/register';
 
 ```js
 import React from 'react';
-import { storiesOf } from '@kadira/storybook';
+import { storiesOf } from '@storybook/react';
 
 import { ShowStaticMarkup } from '../src'
 
