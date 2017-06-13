@@ -1,3 +1,5 @@
+[![npm version](https://badge.fury.io/js/react-storybook-addon-static-markup.svg)](https://badge.fury.io/js/react-storybook-addon-static-markup)
+
 # Static Markup addon for [React Storybook](https://github.com/storybooks/react-storybook)
 
 Displays a panel with an "html version" of a story, as suggested in [this](https://github.com/storybooks/react-storybook/issues/617) thread.
