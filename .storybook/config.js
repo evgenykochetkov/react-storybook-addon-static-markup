@@ -1,4 +1,4 @@
-import { configure, setAddon } from '@kadira/storybook'
+import { configure, setAddon } from '@storybook/react'
 
 import staticMarkup from '../src/'
 

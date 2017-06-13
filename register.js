@@ -24,9 +24,9 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
-var _storybookAddons = require('@kadira/storybook-addons');
+var _addons = require('@storybook/addons');
 
-var _storybookAddons2 = _interopRequireDefault(_storybookAddons);
+var _addons2 = _interopRequireDefault(_addons);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -121,12 +121,12 @@ var StaticMarkup = function (_React$Component) {
 // Register the addon with a unique name.
 
 
-_storybookAddons2.default.register('evgenykochetkov/static-markup', function (api) {
+_addons2.default.register('evgenykochetkov/static-markup', function (api) {
   // Also need to set a unique name to the panel.
-  _storybookAddons2.default.addPanel('evgenykochetkov/static-markup/panel', {
+  _addons2.default.addPanel('evgenykochetkov/static-markup/panel', {
     title: 'Static Markup',
     render: function render() {
-      return _react2.default.createElement(StaticMarkup, { channel: _storybookAddons2.default.getChannel(), api: api });
+      return _react2.default.createElement(StaticMarkup, { channel: _addons2.default.getChannel(), api: api });
     }
   });
 });

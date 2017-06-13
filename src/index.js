@@ -1,5 +1,5 @@
 import React from 'react'
-import addons from '@kadira/storybook-addons';
+import addons from '@storybook/addons';
 import pretty from 'pretty';
 
 import ReactDOMServer from 'react-dom/server'
