@@ -33,6 +33,10 @@ var _storybookAddons = require('@kadira/storybook-addons');
 
 var _storybookAddons2 = _interopRequireDefault(_storybookAddons);
 
+var _pretty = require('pretty');
+
+var _pretty2 = _interopRequireDefault(_pretty);
+
 var _server = require('react-dom/server');
 
 var _server2 = _interopRequireDefault(_server);
@@ -53,7 +57,7 @@ var ShowStaticMarkup = exports.ShowStaticMarkup = function (_React$Component) {
       var children = this.props.children;
 
 
-      var markup = _server2.default.renderToStaticMarkup(children);
+      var markup = (0, _pretty2.default)(_server2.default.renderToStaticMarkup(children));
 
       var channel = _storybookAddons2.default.getChannel();
       channel.emit('evgenykochetkov/static-markup/show-markup', markup);
