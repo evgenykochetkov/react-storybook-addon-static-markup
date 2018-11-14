@@ -40,12 +40,15 @@ class StaticMarkup extends React.Component {
 
   render() {
     const { markup } = this.state;
-
-    return (
+    // setting it to true to support past
+    // versions of storybook, which might not
+    // have active property.
+    const { active = true } = this.props
+    return active ? (
       <div style={styles.markupPanel}>
         { markup }
       </div>
-    );
+    ) : null;
   }
 
   // This is some cleanup tasks when the StaticMarkup panel is unmounting.
@@ -65,8 +68,8 @@ addons.register('evgenykochetkov/static-markup', (api) => {
   // Also need to set a unique name to the panel.
   addons.addPanel('evgenykochetkov/static-markup/panel', {
     title: 'Static Markup',
-    render: () => (
-      <StaticMarkup channel={addons.getChannel()} api={api}/>
+    render: ({active}) => (
+      <StaticMarkup channel={addons.getChannel()} api={api} active={active}/>
     ),
   })
 })

@@ -89,13 +89,18 @@ var StaticMarkup = function (_React$Component) {
     key: 'render',
     value: function render() {
       var markup = this.state.markup;
+      // setting it to true to support past
+      // versions of storybook, which might not
+      // have active property.
 
+      var _props$active = this.props.active,
+          active = _props$active === undefined ? true : _props$active;
 
-      return _react2.default.createElement(
+      return active ? _react2.default.createElement(
         'div',
         { style: styles.markupPanel },
         markup
-      );
+      ) : null;
     }
 
     // This is some cleanup tasks when the StaticMarkup panel is unmounting.
@@ -125,8 +130,9 @@ _addons2.default.register('evgenykochetkov/static-markup', function (api) {
   // Also need to set a unique name to the panel.
   _addons2.default.addPanel('evgenykochetkov/static-markup/panel', {
     title: 'Static Markup',
-    render: function render() {
-      return _react2.default.createElement(StaticMarkup, { channel: _addons2.default.getChannel(), api: api });
+    render: function render(_ref2) {
+      var active = _ref2.active;
+      return _react2.default.createElement(StaticMarkup, { channel: _addons2.default.getChannel(), api: api, active: active });
     }
   });
 });
